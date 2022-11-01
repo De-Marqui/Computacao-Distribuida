@@ -13,7 +13,9 @@ def convertemoeda(valor):
   usd = float(dolar)
   eur = float(euro)
   real = float(valor)
-  converteResultado = f"[Real -> Dolar: {real/usd}]  [Real -> Euro: {real/eur}]" 
+  usdConverte = real/usd
+  eurConverte = real/eur
+  converteResultado = f"[Real -> Dolar: {usdConverte}] \n [Real -> Euro: {eurConverte}]" 
   return converteResultado
 
 if __name__ == '__main__':
