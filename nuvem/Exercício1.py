@@ -2,9 +2,6 @@ from flask import Flask
 import requests
 app = Flask(__name__)
 
-@app.route("/",methods=['GET'])
-def loadBalancer():
-  return "Success", 200
 @app.route('/convertemoeda/<valor>',methods=['GET'])
 
 def convertemoeda(valor):
@@ -16,7 +13,7 @@ def convertemoeda(valor):
   usd = float(dolar)
   eur = float(euro)
   real = float(valor)
-  converteResultado = f"[Real -> Dolar: {(real/usd):.2f}]  [Real -> Euro: {(real/eur):.2f}]" 
+  converteResultado = f"[Real -> Dolar: {real/usd}]  [Real -> Euro: {real/eur}]" 
   return converteResultado
 
 if __name__ == '__main__':
